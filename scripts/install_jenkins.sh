@@ -24,8 +24,8 @@ usermod -aG docker ubuntu
 mkdir -p /var/jenkins_home
 chown -R 1000:1000 /var/jenkins_home/
 #docker run -p 8181:8181 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home -d --name jenkins jenkins/jenkins:latest
-docker run -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -d --name jenkins jenkins/jenkins:latest
+docker run -p 9090:9090 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -d --name jenkins jenkins/jenkins:latest
 
 # show endpoint
 echo 'Jenkins installed'
-echo 'You should now be able to access jenkins at: http://'$(curl -4 -s ifconfig.co)':8181'
+echo 'You should now be able to access jenkins at: http://'$(curl -4 -s ifconfig.co)':9090'
